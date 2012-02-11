@@ -13,10 +13,10 @@
     <property name="source" value="1.6"/>
     <path id="devst_naniwa.classpath">
 		<pathelement location="eclipse/classes"/>
-		<fileset dir="C:\Users\atsuteru\Developments\play\framework">
+		<fileset dir="${play.home}/framework">
 			<include name="**/*.jar"/>
 		</fileset>
-		<fileset dir="C:\Users\atsuteru\Developments\play\framework\lib">
+		<fileset dir="${play.home}/framework/lib">
 			<include name="**/*.jar"/>
 		</fileset>
     </path>
@@ -77,13 +77,13 @@
     </target>
     <target name="devst_naniwa">
         <java classname="play.server.Server" failonerror="true" fork="yes">
-            <jvmarg line="-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n -Dplay.debug=yes -Dplay.id= -Dapplication.path=&quot;${project_loc:devst_naniwa}&quot; -Djava.endorsed.dirs=&quot;C:\Users\atsuteru\Developments\play/framework/endorsed&quot; -javaagent:&quot;C:\Users\atsuteru\Developments\play/framework/play-1.2.4.jar&quot;"/>
+            <jvmarg line="-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n -Dplay.debug=yes -Dplay.id= -Dapplication.path=&quot;${project_loc:devst_naniwa}&quot; -Djava.endorsed.dirs=&quot;${play.home}/framework/endorsed&quot; -javaagent:&quot;${play.home}/framework/play-1.2.4.jar&quot;"/>
             <classpath refid="run.devst_naniwa.classpath"/>
         </java>
     </target>
     <target name="Test devst_naniwa">
         <java classname="play.server.Server" failonerror="true" fork="yes">
-            <jvmarg line="-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n -Dplay.debug=yes -Dplay.id=test -Dapplication.path=&quot;${project_loc:devst_naniwa}&quot; -Djava.endorsed.dirs=&quot;C:\Users\atsuteru\Developments\play/framework/endorsed&quot; -javaagent:&quot;C:\Users\atsuteru\Developments\play/framework/play-1.2.4.jar&quot;"/>
+            <jvmarg line="-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n -Dplay.debug=yes -Dplay.id=test -Dapplication.path=&quot;${project_loc:devst_naniwa}&quot; -Djava.endorsed.dirs=&quot;${play.home}/framework/endorsed&quot; -javaagent:&quot;{play.home}/framework/play-1.2.4.jar&quot;"/>
             <classpath refid="run.Test devst_naniwa.classpath"/>
         </java>
     </target>
