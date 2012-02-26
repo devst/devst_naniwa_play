@@ -11,6 +11,7 @@
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.6"/>
     <property name="source" value="1.6"/>
+	<property name="play.home" value="${env.PLAY_HOME}"/>
     <path id="devst_naniwa.classpath">
 		<pathelement location="eclipse/classes"/>
 		<fileset dir="${play.home}/framework">
@@ -104,6 +105,7 @@
         </junitreport>
     </target>
 	<target name="runtests" depends="build">
+		<echo message="play.home=${play.home}"/>
 		<delete dir="tmp/junit" failonerror="no" />
 		<mkdir dir="tmp/junit"/>
 		<junit printsummary="yes" haltonfailure="false" haltonerror="false"
