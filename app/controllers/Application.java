@@ -11,7 +11,7 @@ public class Application extends Controller {
 
     public static void index() {
     	String message = (new WelcomeMessage()).getMessage();
-        render(message);
+    	String message2 = (new KamiyaMessage()).getMessage();
+        render(message,message2);
     }
-
 }
